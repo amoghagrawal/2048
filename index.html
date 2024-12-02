@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2048</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="grid" id="grid">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="game-over" id="gameOver">
+                Game Over!
+                <button class="reset-button" onclick="game.resetGame()">Try Again</button>
+            </div>
+        </div>
+        <button class="reset-button" onclick="game.resetGame()">Reset Game</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
