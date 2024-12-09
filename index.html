@@ -1,37 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>2048</title>
-    <link rel="stylesheet" href="style.css">
+<html><head><base href="." />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container" id="gameContainer">
-        <div class="score">Score: <span id="score">0</span></div>
-        <div class="grid" id="grid">
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="game-over" id="gameOver">
-                Game Over!
-                <button class="reset-button" onclick="game.resetGame()">Try Again</button>
-            </div>
-        </div>
-        <button class="reset-button" onclick="game.resetGame()">Reset Game</button>
+<div id="header" class="header" style="display: none;">
+    <h1 class="header-title">2048</h1>
+    <div id="timer" class="timer" style="display: none;">60</div>
+    <div class="header-buttons">
+        <button class="header-button" id="resetButton" onclick="resetCurrentGame()">Reset</button>
+        <button class="header-button" onclick="goToMenu()">Back to Menu</button>
     </div>
-    <script src="game.js"></script>
-</body>
-</html>
+</div>
+<div id="mainMenu" class="menu-container">
+    <h1 class="game-title">2048</h1>
+    <button class="menu-button" onclick="startSinglePlayer()">Single Player</button>
+    <button class="menu-button" onclick="startVsBot()">Play vs Bot</button>
+</div>
+<div id="gameScreen" class="game-screen" style="display: none;">
+    <div class="games-row">
+        <div id="singlePlayerContainer" class="game-container">
+            <div class="score">Player Score: <span id="playerScore">0</span></div>
+            <div class="board" id="playerBoard"></div>
+        </div>
+        <div id="botContainer" class="game-container" style="display: none">
+            <div class="score">Bot Score: <span id="botScore">0</span></div>
+            <div class="board" id="botBoard"></div>
+        </div>
+    </div>
+    <div class="game-over" id="gameOver">
+        <div class="game-over-container">
+            <h2 class="game-over-title" id="gameOverTitle">Game Over!</h2>
+            <p class="final-score" id="finalScore"></p>
+            <button class="game-over-button" onclick="goToMenu()">Back to Menu</button>
+            <button class="game-over-button" id="playAgainButton" onclick="playAgain()">Play Again</button>
+        </div>
+    </div>
+</div>
+<script src="game.js"></script>
+</body></html>
